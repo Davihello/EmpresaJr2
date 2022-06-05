@@ -20,6 +20,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.Usuario;
@@ -111,7 +112,7 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         btnAtualizarUsuario = new javax.swing.JButton();
         btnInserirUsuario = new javax.swing.JButton();
         jComboBoxPerfil = new javax.swing.JComboBox<>();
-        txtUsername = new javax.swing.JTextField();
+        txtRazao = new javax.swing.JTextField();
         btnVoltarUsuario = new javax.swing.JButton();
         btnPesquisarUsuario = new javax.swing.JButton();
         btnApagarUsuario = new javax.swing.JButton();
@@ -130,7 +131,7 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         txtBairro = new javax.swing.JTextField();
         txtUf = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        txtRespon = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
         txtDataTerm = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -413,18 +414,18 @@ public class CadastroEmpresa extends javax.swing.JFrame {
             }
         });
 
-        txtUsername.setBackground(new java.awt.Color(238, 238, 238));
-        txtUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtUsername.setText("Razão Social");
-        txtUsername.setEnabled(false);
-        txtUsername.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtRazao.setBackground(new java.awt.Color(238, 238, 238));
+        txtRazao.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtRazao.setText("Razão Social");
+        txtRazao.setEnabled(false);
+        txtRazao.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtUsernameFocusGained(evt);
+                txtRazaoFocusGained(evt);
             }
         });
-        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+        txtRazao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsernameActionPerformed(evt);
+                txtRazaoActionPerformed(evt);
             }
         });
 
@@ -547,6 +548,11 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         txtDataInicio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtDataInicio.setText("Data de Início ");
         txtDataInicio.setEnabled(false);
+        txtDataInicio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDataInicioFocusGained(evt);
+            }
+        });
         txtDataInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDataInicioActionPerformed(evt);
@@ -602,6 +608,11 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         txtRg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtRg.setText("RG");
         txtRg.setEnabled(false);
+        txtRg.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtRgFocusGained(evt);
+            }
+        });
         txtRg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRgActionPerformed(evt);
@@ -640,18 +651,18 @@ public class CadastroEmpresa extends javax.swing.JFrame {
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons/avatar-de-perfil (1).png"))); // NOI18N
 
-        txtRespon.setBackground(new java.awt.Color(238, 238, 238));
-        txtRespon.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtRespon.setText("Responsável");
-        txtRespon.setEnabled(false);
-        txtRespon.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtUsername.setBackground(new java.awt.Color(238, 238, 238));
+        txtUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtUsername.setText("Responsável");
+        txtUsername.setEnabled(false);
+        txtUsername.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtResponFocusGained(evt);
+                txtUsernameFocusGained(evt);
             }
         });
-        txtRespon.addActionListener(new java.awt.event.ActionListener() {
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtResponActionPerformed(evt);
+                txtUsernameActionPerformed(evt);
             }
         });
 
@@ -659,6 +670,11 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         txtDataTerm.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtDataTerm.setText("Data de Término");
         txtDataTerm.setEnabled(false);
+        txtDataTerm.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDataTermFocusGained(evt);
+            }
+        });
         txtDataTerm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDataTermActionPerformed(evt);
@@ -703,13 +719,13 @@ public class CadastroEmpresa extends javax.swing.JFrame {
                                     .addComponent(txtDataTerm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtRazao, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBoxPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRespon, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnNovoUsuario)
                                 .addGap(48, 48, 48)
@@ -740,11 +756,11 @@ public class CadastroEmpresa extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRazao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtRespon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -802,7 +818,7 @@ public class CadastroEmpresa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNovoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoUsuarioActionPerformed
-        txtCep.setEnabled(true);
+         txtCep.setEnabled(true);
         txtCpf.setEnabled(true);
         txtId.setEnabled(true);
         btnPesquisarUsuario.setEnabled(true);
@@ -810,19 +826,20 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         btnInserirUsuario.setEnabled(true);
         btnAtualizarUsuario.setEnabled(true);
         btnApagarUsuario.setEnabled(true);
-        txtUsername.setEnabled(true);
+        txtRazao.setEnabled(true);
         txtSenha.setEnabled(true);
         jComboBoxPerfil.setEnabled(true);
         jComboBoxCurso.setEnabled(true);
         txtTel.setEnabled(true);
         txtEmail.setEnabled(true);
-        txtRespon.setEnabled(true);
-        txtRg.setEnabled(true);
+        txtCnpj.setEnabled(true);
+        txtDataTerm.setEnabled(true);
         txtBairro.setEnabled(true);
         txtUf.setEnabled(true);
         txtDataInicio.setEnabled(true);
-        txtDataTerm.setEnabled(true);
-        txtCnpj.setEnabled(true);
+        txtRg.setEnabled(true);
+        txtUsername.setEnabled(true);
+        
         
         
         
@@ -856,8 +873,20 @@ public class CadastroEmpresa extends javax.swing.JFrame {
             
             java.sql.Statement st = conn.createStatement();
             st.executeUpdate("UPDATE usuarios SET username='"
-            + this.txtUsername.getText() + "',senha='"
-            + this.txtSenha.getText()+ "',perfil='"
+            + this.txtRazao.getText() 
+            + "',cep='" + this.txtCep.getText() 
+            + "',bairro='" + this.txtBairro.getText() 
+            + "',rg='" + this.txtRg.getText()
+            + "',cpf='" + this.txtCpf.getText()
+            + "',email='" + this.txtEmail.getText()        
+            + "',cnpj='" + this.txtCnpj.getText()
+            + "',data_inicio='" + this.txtDataInicio.getText()
+            + "',data_termino='" + this.txtDataTerm.getText()        
+            + "',cep='" + this.txtCep.getText()        
+            + "',unidade_federal='" + this.txtUf.getText()
+            + "',razao='" + this.txtRazao.getText()
+            + "',username='" + this.txtUsername.getText()
+            + "',senha='" + this.txtSenha.getText()+ "',perfil='"       
             + this.jComboBoxPerfil.getSelectedItem() + "',curso='"
             + this.jComboBoxCurso.getSelectedItem()
             + "' WHERE id='" + this.txtId.getText() + "'");
@@ -865,10 +894,8 @@ public class CadastroEmpresa extends javax.swing.JFrame {
             } catch (SQLException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(rootPane, e);
             }
-            txtUsername.setText("");
-            txtSenha.setText("");
-            jComboBoxPerfil.setSelectedItem(""); 
-            jComboBoxCurso.setSelectedItem("");
+             CadastroEmpresa menu1 = new CadastroEmpresa();
+             menu1.show();
            
          
             } 
@@ -897,12 +924,14 @@ public class CadastroEmpresa extends javax.swing.JFrame {
             catch (SQLException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(rootPane, e);
             }
-            txtUsername.setText(""); 
+            txtRazao.setText(""); 
             txtSenha.setText("");
             jComboBoxPerfil.setSelectedItem("");
             jComboBoxCurso.setSelectedItem("");
             
             }
+               CadastroEmpresa menu1 = new CadastroEmpresa();
+             menu1.show();
         
         carregaTabela();
     }//GEN-LAST:event_btnApagarUsuarioActionPerformed
@@ -920,17 +949,20 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         usuario.setCep((String)  txtCep.getText());
         usuario.setBairro((String) txtBairro.getText());
         usuario.setUnidade_Federal((String) txtUf.getText());
-        
-        usuario.setMae((String) txtCnpj.getText());
+        usuario.setRazao((String) txtRazao.getText());
+        usuario.setCnpj((String) txtCnpj.getText());
         usuario.setEmail((String) txtEmail.getText());
-        usuario.setData_nascimento((String) txtDataInicio.getText());
+        usuario.setData_inicio((String) txtDataInicio.getText());
+        usuario.setData_termino((String) txtDataTerm.getText());
         usuario.setCpf((String) txtCpf.getText());
+        usuario.setRg((String) txtRg.getText());
+        
         
         
        
         
         
-        if (txtUsername.getText().isEmpty() || 
+        if (txtRazao.getText().isEmpty() || 
             txtSenha.getText().isEmpty()){ 
             
             JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
@@ -942,12 +974,12 @@ public class CadastroEmpresa extends javax.swing.JFrame {
             UsuarioDAO dao = new UsuarioDAO();
             dao.inserir(usuario);
             
-             JOptionPane.showMessageDialog(null, "Usuario "+ txtUsername.getText()
+             JOptionPane.showMessageDialog(null, "Empresa "+ txtRazao.getText()
                     +" foi inserido com sucesso"); 
             
         }
         
-          txtUsername.setText("");
+          txtRazao.setText("");
           txtSenha.setText("");
           jComboBoxPerfil.setSelectedItem("");
           jComboBoxCurso.setSelectedItem("");
@@ -955,7 +987,8 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         
           carregaTabela();
         
-        
+        CadastroEmpresa menu1 = new CadastroEmpresa();
+             menu1.show();
         
         
     }//GEN-LAST:event_btnInserirUsuarioActionPerformed
@@ -968,11 +1001,11 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         btnInserirUsuario.setEnabled(false);
         btnAtualizarUsuario.setEnabled(false);
         btnApagarUsuario.setEnabled(false);
-        txtUsername.setEnabled(false);
+        txtRazao.setEnabled(false);
         txtSenha.setEnabled(false);
         jComboBoxPerfil.setEnabled(false);
         txtId.setText("");
-        txtUsername.setText("");
+        txtRazao.setText("");
         txtSenha.setText("");
         txtCpf.setText("");
         txtRg.setText("");
@@ -999,9 +1032,22 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         btnAtualizarUsuario.setEnabled(true);
         btnApagarUsuario.setEnabled(true);
         txtUsername.setEnabled(true);
-        txtSenha.setEnabled(true);
+        txtSenha.setEnabled(false);
         jComboBoxPerfil.setEnabled(true);
         jComboBoxCurso.setEnabled(true);
+        txtCpf.setEnabled(true);
+        txtTel.setEnabled(true);
+        txtRg.setEnabled(true);
+        txtUf.setEnabled(true);
+        txtRazao.setEnabled(true);
+        txtUf.setEnabled(true);
+        txtEmail.setEnabled(true);
+        txtCnpj.setEnabled(true);
+        txtDataInicio.setEnabled(true);
+        txtDataTerm.setEnabled(true);
+        txtCep.setEnabled(true);
+        
+        txtBairro.setEnabled(true);
         
         
         if (txtId.getText().isEmpty()){
@@ -1025,6 +1071,17 @@ public class CadastroEmpresa extends javax.swing.JFrame {
                 txtSenha.setText(usuario.getSenha());
                 jComboBoxPerfil.setSelectedItem(usuario.getPerfil());
                 jComboBoxCurso.setSelectedItem(usuario.getCurso());
+                txtCpf.setText(usuario.getCpf());               
+                txtDataInicio.setText(usuario.getData_inicio());
+                txtDataTerm.setText(usuario.getData_termino());
+                txtRazao.setText(usuario.getRazao());
+                txtUf.setText(usuario.getUnidade_Federal());
+                txtCep.setText(usuario.getCep());
+                txtEmail.setText(usuario.getEmail());
+                txtCnpj.setText(usuario.getCnpj());
+                txtBairro.setText(usuario.getBairro());
+                txtTel.setText(usuario.getTelefone());
+                txtRg.setText(usuario.getRg());
              
                 
             }
@@ -1051,17 +1108,12 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         btnInserirUsuario.setEnabled(false);
         btnAtualizarUsuario.setEnabled(true);
         btnApagarUsuario.setEnabled(true);
-        txtUsername.setEnabled(true);
+        txtRazao.setEnabled(true);
         jComboBoxPerfil.setEnabled(true);
         jComboBoxCurso.setEnabled(true);
         
         
-        int linha = jUsuarios.getSelectedRow(); 
-        txtId.setText(jUsuarios.getValueAt(linha,0).toString());
-        txtUsername.setText(jUsuarios.getValueAt(linha,1).toString()); 
-        txtSenha.setText(jUsuarios.getValueAt(linha, 2).toString());
-        jComboBoxPerfil.setSelectedItem(jUsuarios.getValueAt(linha,3).toString()); 
-        jComboBoxCurso.setSelectedItem(jUsuarios.getValueAt(linha,4).toString()); 
+         
        
         
         
@@ -1079,9 +1131,9 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jComboBoxCursoActionPerformed
 
-    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+    private void txtRazaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRazaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsernameActionPerformed
+    }//GEN-LAST:event_txtRazaoActionPerformed
 
     private void jComboBoxPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPerfilActionPerformed
         // TODO add your handling code here:
@@ -1127,9 +1179,9 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUfActionPerformed
 
-    private void txtUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsernameFocusGained
-      txtUsername.setText("");
-    }//GEN-LAST:event_txtUsernameFocusGained
+    private void txtRazaoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRazaoFocusGained
+      txtRazao.setText("");
+    }//GEN-LAST:event_txtRazaoFocusGained
 
     private void txtSenhaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSenhaFocusGained
         txtSenha.setText("");
@@ -1163,16 +1215,17 @@ public class CadastroEmpresa extends javax.swing.JFrame {
        txtUf.setText("");
     }//GEN-LAST:event_txtUfFocusGained
 
-    private void txtResponFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtResponFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtResponFocusGained
+    private void txtUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsernameFocusGained
+        
+        txtUsername.setText("");
+    }//GEN-LAST:event_txtUsernameFocusGained
 
-    private void txtResponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResponActionPerformed
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtResponActionPerformed
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void txtDataTermActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataTermActionPerformed
-        // TODO add your handling code here:
+       txtDataTerm.setText("");
     }//GEN-LAST:event_txtDataTermActionPerformed
 
     private void jLabel13MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseMoved
@@ -1197,6 +1250,18 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         emp.show();
 
     }//GEN-LAST:event_jLabel17MouseClicked
+
+    private void txtRgFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRgFocusGained
+        txtRg.setText("");
+    }//GEN-LAST:event_txtRgFocusGained
+
+    private void txtDataInicioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDataInicioFocusGained
+        txtDataInicio.setText("");
+    }//GEN-LAST:event_txtDataInicioFocusGained
+
+    private void txtDataTermFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDataTermFocusGained
+        txtDataTerm.setText("");
+    }//GEN-LAST:event_txtDataTermFocusGained
 
     
     private void carregaTabela(){
@@ -1337,7 +1402,7 @@ public class CadastroEmpresa extends javax.swing.JFrame {
     private javax.swing.JTextField txtDataTerm;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtRespon;
+    private javax.swing.JTextField txtRazao;
     private javax.swing.JTextField txtRg;
     private javax.swing.JPasswordField txtSenha;
     private javax.swing.JTextField txtTel;
@@ -1377,6 +1442,110 @@ public class CadastroEmpresa extends javax.swing.JFrame {
 
     public void setjComboBoxPerfil(JComboBox<String> jComboBoxPerfil) {
         this.jComboBoxPerfil = jComboBoxPerfil;
+    }
+
+    public JTable getjUsuarios() {
+        return jUsuarios;
+    }
+
+    public void setjUsuarios(JTable jUsuarios) {
+        this.jUsuarios = jUsuarios;
+    }
+
+    public JTextField getTxtBairro() {
+        return txtBairro;
+    }
+
+    public void setTxtBairro(JTextField txtBairro) {
+        this.txtBairro = txtBairro;
+    }
+
+    public JTextField getTxtCep() {
+        return txtCep;
+    }
+
+    public void setTxtCep(JTextField txtCep) {
+        this.txtCep = txtCep;
+    }
+
+    public JTextField getTxtCnpj() {
+        return txtCnpj;
+    }
+
+    public void setTxtCnpj(JTextField txtCnpj) {
+        this.txtCnpj = txtCnpj;
+    }
+
+    public JTextField getTxtCpf() {
+        return txtCpf;
+    }
+
+    public void setTxtCpf(JTextField txtCpf) {
+        this.txtCpf = txtCpf;
+    }
+
+    public JTextField getTxtDataInicio() {
+        return txtDataInicio;
+    }
+
+    public void setTxtDataInicio(JTextField txtDataInicio) {
+        this.txtDataInicio = txtDataInicio;
+    }
+
+    public JTextField getTxtDataTerm() {
+        return txtDataTerm;
+    }
+
+    public void setTxtDataTerm(JTextField txtDataTerm) {
+        this.txtDataTerm = txtDataTerm;
+    }
+
+    public JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    public void setTxtEmail(JTextField txtEmail) {
+        this.txtEmail = txtEmail;
+    }
+
+    public JTextField getTxtId() {
+        return txtId;
+    }
+
+    public void setTxtId(JTextField txtId) {
+        this.txtId = txtId;
+    }
+
+    public JTextField getTxtRespon() {
+        return txtUsername;
+    }
+
+    public void setTxtRespon(JTextField txtRespon) {
+        this.txtUsername = txtRespon;
+    }
+
+    public JTextField getTxtRg() {
+        return txtRg;
+    }
+
+    public void setTxtRg(JTextField txtRg) {
+        this.txtRg = txtRg;
+    }
+
+    public JTextField getTxtTel() {
+        return txtTel;
+    }
+
+    public void setTxtTel(JTextField txtTel) {
+        this.txtTel = txtTel;
+    }
+
+    public JTextField getTxtUf() {
+        return txtUf;
+    }
+
+    public void setTxtUf(JTextField txtUf) {
+        this.txtUf = txtUf;
     }
 
 

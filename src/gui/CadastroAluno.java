@@ -20,6 +20,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.Usuario;
@@ -351,6 +352,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtSenha.setBackground(new java.awt.Color(238, 238, 238));
         txtSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtSenha.setForeground(new java.awt.Color(51, 51, 51));
         txtSenha.setText("PASSWORD");
         txtSenha.setEnabled(false);
         txtSenha.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -398,6 +400,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         jComboBoxPerfil.setBackground(new java.awt.Color(238, 238, 238));
         jComboBoxPerfil.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jComboBoxPerfil.setForeground(new java.awt.Color(102, 102, 102));
         jComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluno" }));
         jComboBoxPerfil.setEnabled(false);
         jComboBoxPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -413,6 +416,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtUsername.setBackground(new java.awt.Color(238, 238, 238));
         txtUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtUsername.setForeground(new java.awt.Color(51, 51, 51));
         txtUsername.setText("Nome");
         txtUsername.setEnabled(false);
         txtUsername.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -442,6 +446,11 @@ public class CadastroAluno extends javax.swing.JFrame {
         btnPesquisarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnPesquisarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons/search-3-24.png"))); // NOI18N
         btnPesquisarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPesquisarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPesquisarUsuarioMouseClicked(evt);
+            }
+        });
         btnPesquisarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesquisarUsuarioActionPerformed(evt);
@@ -504,6 +513,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         jComboBoxCurso.setBackground(new java.awt.Color(255, 255, 255));
         jComboBoxCurso.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jComboBoxCurso.setForeground(new java.awt.Color(102, 102, 102));
         jComboBoxCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Informática", "Enfermagem", "Administração" }));
         jComboBoxCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -513,6 +523,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtCpf.setBackground(new java.awt.Color(238, 238, 238));
         txtCpf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtCpf.setForeground(new java.awt.Color(51, 51, 51));
         txtCpf.setText("CPF");
         txtCpf.setEnabled(false);
         txtCpf.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -528,6 +539,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtTel.setBackground(new java.awt.Color(238, 238, 238));
         txtTel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtTel.setForeground(new java.awt.Color(51, 51, 51));
         txtTel.setText("Telefone");
         txtTel.setEnabled(false);
         txtTel.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -543,6 +555,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtDataNas.setBackground(new java.awt.Color(238, 238, 238));
         txtDataNas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtDataNas.setForeground(new java.awt.Color(51, 51, 51));
         txtDataNas.setText("Data de Nascimento");
         txtDataNas.setEnabled(false);
         txtDataNas.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -558,6 +571,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtEmail.setBackground(new java.awt.Color(238, 238, 238));
         txtEmail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(51, 51, 51));
         txtEmail.setText("Email");
         txtEmail.setEnabled(false);
         txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -573,6 +587,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtpai.setBackground(new java.awt.Color(238, 238, 238));
         txtpai.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtpai.setForeground(new java.awt.Color(51, 51, 51));
         txtpai.setText("Pai");
         txtpai.setEnabled(false);
         txtpai.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -588,6 +603,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtMae.setBackground(new java.awt.Color(238, 238, 238));
         txtMae.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtMae.setForeground(new java.awt.Color(51, 51, 51));
         txtMae.setText("Mãe");
         txtMae.setEnabled(false);
         txtMae.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -603,6 +619,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtCep.setBackground(new java.awt.Color(238, 238, 238));
         txtCep.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtCep.setForeground(new java.awt.Color(51, 51, 51));
         txtCep.setText("Cep");
         txtCep.setEnabled(false);
         txtCep.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -618,6 +635,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtRg.setBackground(new java.awt.Color(238, 238, 238));
         txtRg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtRg.setForeground(new java.awt.Color(51, 51, 51));
         txtRg.setText("RG");
         txtRg.setEnabled(false);
         txtRg.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -633,6 +651,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtBairro.setBackground(new java.awt.Color(238, 238, 238));
         txtBairro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtBairro.setForeground(new java.awt.Color(51, 51, 51));
         txtBairro.setText("Bairro");
         txtBairro.setEnabled(false);
         txtBairro.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -648,6 +667,7 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         txtUf.setBackground(new java.awt.Color(238, 238, 238));
         txtUf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtUf.setForeground(new java.awt.Color(51, 51, 51));
         txtUf.setText("Unidade Federal");
         txtUf.setEnabled(false);
         txtUf.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -775,17 +795,14 @@ public class CadastroAluno extends javax.swing.JFrame {
                     .addComponent(txtDataNas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnNovoUsuario)
-                            .addComponent(btnAtualizarUsuario)
-                            .addComponent(btnInserirUsuario)
-                            .addComponent(btnApagarUsuario))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnVoltarUsuario)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(btnNovoUsuario)
+                    .addComponent(btnAtualizarUsuario)
+                    .addComponent(btnInserirUsuario)
+                    .addComponent(btnApagarUsuario)
+                    .addComponent(btnVoltarUsuario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -864,8 +881,18 @@ public class CadastroAluno extends javax.swing.JFrame {
             
             java.sql.Statement st = conn.createStatement();
             st.executeUpdate("UPDATE usuarios SET username='"
-            + this.txtUsername.getText() + "',senha='"
-            + this.txtSenha.getText()+ "',perfil='"
+            + this.txtUsername.getText() 
+            + "',cep='" + this.txtCep.getText() 
+            + "',bairro='" + this.txtBairro.getText() 
+            + "',rg='" + this.txtRg.getText()
+            + "',cpf='" + this.txtCpf.getText()
+            + "',email='" + this.txtEmail.getText()        
+            + "',mae='" + this.txtMae.getText()
+            + "',pai='" + this.txtpai.getText()        
+            + "',cep='" + this.txtCep.getText()        
+            + "',unidade_federal='" + this.txtUf.getText()
+            + "',data_nascimento='" + this.txtDataNas.getText()        
+            + "',senha='" + this.txtSenha.getText()+ "',perfil='"       
             + this.jComboBoxPerfil.getSelectedItem() + "',curso='"
             + this.jComboBoxCurso.getSelectedItem()
             + "' WHERE id='" + this.txtId.getText() + "'");
@@ -873,6 +900,8 @@ public class CadastroAluno extends javax.swing.JFrame {
             } catch (SQLException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(rootPane, e);
             }
+            
+            
             txtUsername.setText("");
             txtSenha.setText("");
             jComboBoxPerfil.setSelectedItem(""); 
@@ -913,6 +942,12 @@ public class CadastroAluno extends javax.swing.JFrame {
             }
         
         carregaTabela();
+        
+        
+         CadastroAluno menu1 = new CadastroAluno();
+        menu1.show();
+        
+        
     }//GEN-LAST:event_btnApagarUsuarioActionPerformed
 
     private void btnInserirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirUsuarioActionPerformed
@@ -923,7 +958,10 @@ public class CadastroAluno extends javax.swing.JFrame {
         usuario.setUsername(txtUsername.getText());
         usuario.setSenha(txtSenha.getText());
         usuario.setPerfil((String) jComboBoxPerfil.getSelectedItem());
+        
+        
         usuario.setCurso((String) jComboBoxCurso.getSelectedItem());
+        
         usuario.setTelefone((String)  txtTel.getText());
         usuario.setCep((String)  txtCep.getText());
         usuario.setBairro((String) txtBairro.getText());
@@ -933,6 +971,7 @@ public class CadastroAluno extends javax.swing.JFrame {
         usuario.setCpf((String) txtCpf.getText());
         usuario.setEmail((String) txtEmail.getText());
         usuario.setData_nascimento((String) txtDataNas.getText());
+        usuario.setRg((String) txtRg.getText());
         
         
        
@@ -955,16 +994,12 @@ public class CadastroAluno extends javax.swing.JFrame {
             
         }
         
-          txtUsername.setText("");
-          txtSenha.setText("");
-          jComboBoxPerfil.setSelectedItem("");
-          jComboBoxCurso.setSelectedItem("");
+          CadastroAluno menu1 = new CadastroAluno();
+        menu1.show();
          
         
           carregaTabela();
-        
-        
-        
+    
         
     }//GEN-LAST:event_btnInserirUsuarioActionPerformed
 
@@ -1006,10 +1041,22 @@ public class CadastroAluno extends javax.swing.JFrame {
         btnInserirUsuario.setEnabled(false);
         btnAtualizarUsuario.setEnabled(true);
         btnApagarUsuario.setEnabled(true);
-        txtUsername.setEnabled(true);
-        txtSenha.setEnabled(true);
+        txtUsername.setEnabled(false);
+        txtSenha.setEnabled(false);
         jComboBoxPerfil.setEnabled(true);
         jComboBoxCurso.setEnabled(true);
+        txtCpf.setEnabled(true);
+        txtTel.setEnabled(true);
+        txtRg.setEnabled(true);
+        txtUf.setEnabled(true);
+        txtDataNas.setEnabled(true);
+        txtUf.setEnabled(true);
+        txtEmail.setEnabled(true);
+        txtMae.setEnabled(true);
+        txtpai.setEnabled(true);
+        txtCep.setEnabled(true);
+        txtBairro.setEnabled(true);
+        
         
         
         if (txtId.getText().isEmpty()){
@@ -1033,7 +1080,17 @@ public class CadastroAluno extends javax.swing.JFrame {
                 txtSenha.setText(usuario.getSenha());
                 jComboBoxPerfil.setSelectedItem(usuario.getPerfil());
                 jComboBoxCurso.setSelectedItem(usuario.getCurso());
-             
+                txtCpf.setText(usuario.getCpf());               
+                txtMae.setText(usuario.getMae());
+                txtpai.setText(usuario.getPai());
+                txtUf.setText(usuario.getUnidade_Federal());
+                txtCep.setText(usuario.getCep());
+                txtEmail.setText(usuario.getEmail());
+                txtDataNas.setText(usuario.getData_nascimento());
+                txtBairro.setText(usuario.getBairro());
+                txtTel.setText(usuario.getTelefone());
+                txtRg.setText(usuario.getRg());
+                
                 
             }
             
@@ -1062,14 +1119,23 @@ public class CadastroAluno extends javax.swing.JFrame {
         txtUsername.setEnabled(true);
         jComboBoxPerfil.setEnabled(true);
         jComboBoxCurso.setEnabled(true);
+        txtCpf.setEnabled(true);
+        txtDataNas.setEnabled(true);
+        txtTel.setEnabled(true);
+        txtRg.setEnabled(true);
+        txtCep.setEnabled(true);
+        txtMae.setEnabled(true);
+        txtpai.setEnabled(true);
+        txtUf.setEnabled(true);
+        txtBairro.setEnabled(true);
+        txtEmail.setEnabled(true);
+        txtSenha.setEnabled(false);
         
         
-        int linha = jUsuarios.getSelectedRow(); 
-        txtId.setText(jUsuarios.getValueAt(linha,0).toString());
-        txtUsername.setText(jUsuarios.getValueAt(linha,1).toString()); 
-        txtSenha.setText(jUsuarios.getValueAt(linha, 2).toString());
-        jComboBoxPerfil.setSelectedItem(jUsuarios.getValueAt(linha,3).toString()); 
-        jComboBoxCurso.setSelectedItem(jUsuarios.getValueAt(linha,4).toString()); 
+        
+        
+         
+    
        
         
         
@@ -1210,6 +1276,10 @@ public class CadastroAluno extends javax.swing.JFrame {
         txtRg.setText("");
     }//GEN-LAST:event_txtRgFocusGained
 
+    private void btnPesquisarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPesquisarUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPesquisarUsuarioMouseClicked
+
     
     private void carregaTabela(){
         
@@ -1228,7 +1298,7 @@ public class CadastroAluno extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/bdjrr?useTimezone=true"+"&serverTimezone=UTC","root","12345678");
             PreparedStatement pstm;
             ResultSet rs;
-            pstm = conn.prepareStatement("select * from usuarios");
+            pstm = conn.prepareStatement("select id, username, curso, perfil from usuarios");
             rs  = pstm.executeQuery();
             
             while(rs.next()){
@@ -1238,7 +1308,7 @@ public class CadastroAluno extends javax.swing.JFrame {
                     rs.getString(2),
                     rs.getString(3),
                     rs.getString(4),
-                    rs.getString(5),
+                    
                  
                    
                     
@@ -1380,6 +1450,110 @@ public class CadastroAluno extends javax.swing.JFrame {
 
     public void setjComboBoxPerfil(JComboBox<String> jComboBoxPerfil) {
         this.jComboBoxPerfil = jComboBoxPerfil;
+    }
+
+    public JTable getjUsuarios() {
+        return jUsuarios;
+    }
+
+    public void setjUsuarios(JTable jUsuarios) {
+        this.jUsuarios = jUsuarios;
+    }
+
+    public JTextField getTxtBairro() {
+        return txtBairro;
+    }
+
+    public void setTxtBairro(JTextField txtBairro) {
+        this.txtBairro = txtBairro;
+    }
+
+    public JTextField getTxtCep() {
+        return txtCep;
+    }
+
+    public void setTxtCep(JTextField txtCep) {
+        this.txtCep = txtCep;
+    }
+
+    public JTextField getTxtCpf() {
+        return txtCpf;
+    }
+
+    public void setTxtCpf(JTextField txtCpf) {
+        this.txtCpf = txtCpf;
+    }
+
+    public JTextField getTxtDataNas() {
+        return txtDataNas;
+    }
+
+    public void setTxtDataNas(JTextField txtDataNas) {
+        this.txtDataNas = txtDataNas;
+    }
+
+    public JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    public void setTxtEmail(JTextField txtEmail) {
+        this.txtEmail = txtEmail;
+    }
+
+    public JTextField getTxtId() {
+        return txtId;
+    }
+
+    public void setTxtId(JTextField txtId) {
+        this.txtId = txtId;
+    }
+
+    public JTextField getTxtMae() {
+        return txtMae;
+    }
+
+    public void setTxtMae(JTextField txtMae) {
+        this.txtMae = txtMae;
+    }
+
+    public JTextField getTxtRg() {
+        return txtRg;
+    }
+
+    public void setTxtRg(JTextField txtRg) {
+        this.txtRg = txtRg;
+    }
+
+    public JTextField getTxtTel() {
+        return txtTel;
+    }
+
+    public void setTxtTel(JTextField txtTel) {
+        this.txtTel = txtTel;
+    }
+
+    public JTextField getTxtUf() {
+        return txtUf;
+    }
+
+    public void setTxtUf(JTextField txtUf) {
+        this.txtUf = txtUf;
+    }
+
+    public JTextField getTxtpai() {
+        return txtpai;
+    }
+
+    public void setTxtpai(JTextField txtpai) {
+        this.txtpai = txtpai;
+    }
+
+    public JComboBox<String> getjComboBoxCurso() {
+        return jComboBoxCurso;
+    }
+
+    public void setjComboBoxCurso(JComboBox<String> jComboBoxCurso) {
+        this.jComboBoxCurso = jComboBoxCurso;
     }
 
 

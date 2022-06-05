@@ -117,7 +117,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         
-        CadastroSecretario cadastroUsuario = new CadastroSecretario();
+        MenuSecretario cadastroUsuario = new MenuSecretario();
         cadastroUsuario.setVisible(true);
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed

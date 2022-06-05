@@ -547,6 +547,11 @@ public class CadastroOrientador extends javax.swing.JFrame {
         txtDataInicio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtDataInicio.setText("Data de Início ");
         txtDataInicio.setEnabled(false);
+        txtDataInicio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDataInicioFocusGained(evt);
+            }
+        });
         txtDataInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDataInicioActionPerformed(evt);
@@ -602,6 +607,11 @@ public class CadastroOrientador extends javax.swing.JFrame {
         txtRg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtRg.setText("RG");
         txtRg.setEnabled(false);
+        txtRg.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtRgFocusGained(evt);
+            }
+        });
         txtRg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRgActionPerformed(evt);
@@ -659,6 +669,11 @@ public class CadastroOrientador extends javax.swing.JFrame {
         txtDataTer.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtDataTer.setText("Data de Término");
         txtDataTer.setEnabled(false);
+        txtDataTer.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDataTerFocusGained(evt);
+            }
+        });
         txtDataTer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDataTerActionPerformed(evt);
@@ -861,20 +876,29 @@ public class CadastroOrientador extends javax.swing.JFrame {
             
             java.sql.Statement st = conn.createStatement();
             st.executeUpdate("UPDATE usuarios SET username='"
-            + this.txtUsername.getText() + "',senha='"
-            + this.txtSenha.getText()+ "',perfil='"
+            + this.txtUsername.getText() 
+            + "',cep='" + this.txtCep.getText() 
+            + "',bairro='" + this.txtBairro.getText() 
+            + "',rg='" + this.txtRg.getText()
+            + "',cpf='" + this.txtCpf.getText()
+            + "',email='" + this.txtEmail.getText()        
+            + "',qualificacao='" + this.txtQua.getText()
+            + "',data_inicio='" + this.txtDataInicio.getText()
+            + "',data_termino='" + this.txtDataTer.getText()        
+            + "',cep='" + this.txtCep.getText()        
+            + "',unidade_federal='" + this.txtUf.getText()
+            + "',data_nascimento='" + this.txtNasci.getText()        
+            + "',senha='" + this.txtSenha.getText()+ "',perfil='"       
             + this.jComboBoxPerfil.getSelectedItem() + "',curso='"
+            + "',username='" + this.txtUsername.getText()        
             + this.jComboBoxCurso.getSelectedItem()
             + "' WHERE id='" + this.txtId.getText() + "'");
             JOptionPane.showMessageDialog(rootPane, "Usuário atualizado com sucesso!");
             } catch (SQLException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(rootPane, e);
             }
-            txtUsername.setText("");
-            txtSenha.setText("");
-            jComboBoxPerfil.setSelectedItem(""); 
-            jComboBoxCurso.setSelectedItem("");
-           
+             CadastroOrientador menu1 = new CadastroOrientador();
+             menu1.show();
          
             } 
 
@@ -909,6 +933,9 @@ public class CadastroOrientador extends javax.swing.JFrame {
             
             }
         
+         CadastroOrientador menu1 = new CadastroOrientador();
+        menu1.show();
+        
         carregaTabela();
     }//GEN-LAST:event_btnApagarUsuarioActionPerformed
 
@@ -925,11 +952,13 @@ public class CadastroOrientador extends javax.swing.JFrame {
         usuario.setCep((String)  txtCep.getText());
         usuario.setBairro((String) txtBairro.getText());
         usuario.setUnidade_Federal((String) txtUf.getText());
-        
-        usuario.setMae((String) txtQua.getText());
+        usuario.setQualificacao((String) txtQua.getText());
+        usuario.setData_inicio((String) txtDataInicio.getText());
+        usuario.setData_termino((String) txtDataTer.getText());
         usuario.setCpf((String) txtCpf.getText());
+        usuario.setRg((String) txtRg.getText());
         usuario.setEmail((String) txtEmail.getText());
-        usuario.setData_nascimento((String) txtDataInicio.getText());
+        usuario.setData_nascimento((String) txtNasci.getText());
         
         
        
@@ -960,7 +989,8 @@ public class CadastroOrientador extends javax.swing.JFrame {
         
           carregaTabela();
         
-        
+        CadastroOrientador menu1 = new CadastroOrientador();
+        menu1.show();
         
         
     }//GEN-LAST:event_btnInserirUsuarioActionPerformed
@@ -990,6 +1020,7 @@ public class CadastroOrientador extends javax.swing.JFrame {
         txtBairro.setText("");
         txtDataInicio.setText("");
         jComboBoxCurso.setEnabled(false);
+        
         CadastroOrientador menu1 = new CadastroOrientador();
         menu1.show();
         
@@ -999,16 +1030,28 @@ public class CadastroOrientador extends javax.swing.JFrame {
 
     private void btnPesquisarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarUsuarioActionPerformed
        
-        txtId.setEnabled(true);
+       txtId.setEnabled(true);
         btnPesquisarUsuario.setEnabled(true);
         btnNovoUsuario.setEnabled(true);
         btnInserirUsuario.setEnabled(false);
         btnAtualizarUsuario.setEnabled(true);
         btnApagarUsuario.setEnabled(true);
-        txtUsername.setEnabled(true);
-        txtSenha.setEnabled(true);
+        txtUsername.setEnabled(false);
+        txtSenha.setEnabled(false);
         jComboBoxPerfil.setEnabled(true);
         jComboBoxCurso.setEnabled(true);
+        txtCpf.setEnabled(true);
+        txtTel.setEnabled(true);
+        txtRg.setEnabled(true);
+        txtUf.setEnabled(true);
+        txtNasci.setEnabled(true);
+        txtUf.setEnabled(true);
+        txtEmail.setEnabled(true);
+        txtQua.setEnabled(true);
+        txtDataInicio.setEnabled(true);
+        txtDataTer.setEnabled(true);
+        txtCep.setEnabled(true);
+        txtBairro.setEnabled(true);
         
         
         if (txtId.getText().isEmpty()){
@@ -1028,10 +1071,21 @@ public class CadastroOrientador extends javax.swing.JFrame {
             
             if(usuario!=null){
                 
-                txtUsername.setText(usuario.getUsername());
+                 txtUsername.setText(usuario.getUsername());
                 txtSenha.setText(usuario.getSenha());
                 jComboBoxPerfil.setSelectedItem(usuario.getPerfil());
                 jComboBoxCurso.setSelectedItem(usuario.getCurso());
+                txtCpf.setText(usuario.getCpf());               
+                txtDataInicio.setText(usuario.getData_inicio());
+                txtDataTer.setText(usuario.getData_termino());
+                txtQua.setText(usuario.getQualificacao());
+                txtUf.setText(usuario.getUnidade_Federal());
+                txtCep.setText(usuario.getCep());
+                txtEmail.setText(usuario.getEmail());
+                txtNasci.setText(usuario.getData_nascimento());
+                txtBairro.setText(usuario.getBairro());
+                txtTel.setText(usuario.getTelefone());
+                txtRg.setText(usuario.getRg());
              
                 
             }
@@ -1063,12 +1117,7 @@ public class CadastroOrientador extends javax.swing.JFrame {
         jComboBoxCurso.setEnabled(true);
         
         
-        int linha = jUsuarios.getSelectedRow(); 
-        txtId.setText(jUsuarios.getValueAt(linha,0).toString());
-        txtUsername.setText(jUsuarios.getValueAt(linha,1).toString()); 
-        txtSenha.setText(jUsuarios.getValueAt(linha, 2).toString());
-        jComboBoxPerfil.setSelectedItem(jUsuarios.getValueAt(linha,3).toString()); 
-        jComboBoxCurso.setSelectedItem(jUsuarios.getValueAt(linha,4).toString()); 
+        
        
         
         
@@ -1163,7 +1212,7 @@ public class CadastroOrientador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUfFocusGained
 
     private void txtNasciFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNasciFocusGained
-        // TODO add your handling code here:
+        txtNasci.setText("");
     }//GEN-LAST:event_txtNasciFocusGained
 
     private void txtNasciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNasciActionPerformed
@@ -1204,6 +1253,18 @@ public class CadastroOrientador extends javax.swing.JFrame {
     private void txtQuaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtQuaFocusGained
         txtQua.setText("");
     }//GEN-LAST:event_txtQuaFocusGained
+
+    private void txtRgFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRgFocusGained
+       txtRg.setText("");
+    }//GEN-LAST:event_txtRgFocusGained
+
+    private void txtDataInicioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDataInicioFocusGained
+        txtDataInicio.setText("");
+    }//GEN-LAST:event_txtDataInicioFocusGained
+
+    private void txtDataTerFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDataTerFocusGained
+        txtDataTer.setText("");
+    }//GEN-LAST:event_txtDataTerFocusGained
 
     
     private void carregaTabela(){
@@ -1400,6 +1461,102 @@ public class CadastroOrientador extends javax.swing.JFrame {
 
     public void setjComboBoxPerfil(JComboBox<String> jComboBoxPerfil) {
         this.jComboBoxPerfil = jComboBoxPerfil;
+    }
+
+    public JComboBox<String> getjComboBoxCurso() {
+        return jComboBoxCurso;
+    }
+
+    public void setjComboBoxCurso(JComboBox<String> jComboBoxCurso) {
+        this.jComboBoxCurso = jComboBoxCurso;
+    }
+
+    public JTextField getTxtBairro() {
+        return txtBairro;
+    }
+
+    public void setTxtBairro(JTextField txtBairro) {
+        this.txtBairro = txtBairro;
+    }
+
+    public JTextField getTxtCpf() {
+        return txtCpf;
+    }
+
+    public void setTxtCpf(JTextField txtCpf) {
+        this.txtCpf = txtCpf;
+    }
+
+    public JTextField getTxtDataInicio() {
+        return txtDataInicio;
+    }
+
+    public void setTxtDataInicio(JTextField txtDataInicio) {
+        this.txtDataInicio = txtDataInicio;
+    }
+
+    public JTextField getTxtDataTer() {
+        return txtDataTer;
+    }
+
+    public void setTxtDataTer(JTextField txtDataTer) {
+        this.txtDataTer = txtDataTer;
+    }
+
+    public JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    public void setTxtEmail(JTextField txtEmail) {
+        this.txtEmail = txtEmail;
+    }
+
+    public JTextField getTxtId() {
+        return txtId;
+    }
+
+    public void setTxtId(JTextField txtId) {
+        this.txtId = txtId;
+    }
+
+    public JTextField getTxtNasci() {
+        return txtNasci;
+    }
+
+    public void setTxtNasci(JTextField txtNasci) {
+        this.txtNasci = txtNasci;
+    }
+
+    public JTextField getTxtQua() {
+        return txtQua;
+    }
+
+    public void setTxtQua(JTextField txtQua) {
+        this.txtQua = txtQua;
+    }
+
+    public JTextField getTxtRg() {
+        return txtRg;
+    }
+
+    public void setTxtRg(JTextField txtRg) {
+        this.txtRg = txtRg;
+    }
+
+    public JTextField getTxtTel() {
+        return txtTel;
+    }
+
+    public void setTxtTel(JTextField txtTel) {
+        this.txtTel = txtTel;
+    }
+
+    public JTextField getTxtUf() {
+        return txtUf;
+    }
+
+    public void setTxtUf(JTextField txtUf) {
+        this.txtUf = txtUf;
     }
 
 

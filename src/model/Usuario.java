@@ -18,10 +18,98 @@ public class Usuario {
     private String data_nascimento;
     private String pai;
     private String mae;
+    private String rg;
+    private String cnpj;
+    private String qualificacao;
+    private String data_inicio;
+    private String data_termino;
+    private String razao;
 
- 
+    public String getRazao() {
+        return razao;
+    }
+
+    public void setRazao(String razao) {
+        this.razao = razao;
+    }
 
     
+    
+    
+    
+    
+    
+    public String getQualificacao() {
+        return qualificacao;
+    }
+
+    public void setQualificacao(String qualificacao) {
+        this.qualificacao = qualificacao;
+    }
+
+    public String getData_inicio() {
+        return data_inicio;
+    }
+
+    public void setData_inicio(String data_inicio) {
+        this.data_inicio = data_inicio;
+    }
+
+    public String getData_termino() {
+        return data_termino;
+    }
+
+    public void setData_termino(String data_termino) {
+        this.data_termino = data_termino;
+    }
+
+    public Usuario(int id, String username, String senha, String perfil, String curso, String email, String cpf, String telefone, String cep, String bairro, String Unidade_Federal, String data_nascimento, String pai, String mae, String rg, String cnpj, String qualificacao, String data_inicio, String data_termino, String razao) {
+        this.id = id;
+        this.username = username;
+        this.senha = senha;
+        this.perfil = perfil;
+        this.curso = curso;
+        this.email = email;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.cep = cep;
+        this.bairro = bairro;
+        this.Unidade_Federal = Unidade_Federal;
+        this.data_nascimento = data_nascimento;
+        this.pai = pai;
+        this.mae = mae;
+        this.rg = rg;
+        this.cnpj = cnpj;
+        this.qualificacao = qualificacao;
+        this.data_inicio = data_inicio;
+        this.data_termino = data_termino;
+        this.razao = razao;
+    }
+
+   
+   
+    
+    
+    
+   
+    
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+   
+    
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
     
     
     public String getCurso() {
@@ -32,32 +120,12 @@ public class Usuario {
         this.curso = curso;
     }
 
-   
-    
+  
     public Usuario(){
         
     }
-    
-    public Usuario(int id, String username, String senha, String perfil, String curso, String email, String telefone, String cep, String bairro, String Unidade_Federal, String data_nascimento, String pai, String mae, String Cpf){
-        this.id = id;
-        this.username = username;
-        this.senha = senha;
-        this.perfil = perfil;
-        this.curso = curso;
-        this.email = email;
-        this.Unidade_Federal = Unidade_Federal;
-        this.telefone = telefone;
-        this.bairro = bairro;
-        this.cep = cep;
-        this.mae = mae;
-        this.pai = pai;
-        this.cpf = cpf;
-        
-       
-        
-      
-        
-    }
+
+     
 
     public String getCpf() {
         return cpf;
@@ -66,11 +134,6 @@ public class Usuario {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-
-
-
-   
-
    
     
     public String getEmail() {

@@ -25,13 +25,17 @@ public class UsuarioDAO {
     private String curso;
     private String senha;
     private String perfil;
-     private String email;
+    private String email;
     private String telefone;
     private String cep;
     private String bairro;
     private String cpf;
     private String data_nascimento;
     private String unidade_federal;
+    private String rg;
+    private String data_inicio;
+    private String data_termino;
+    private String razao;
     private Login gui;
     
     
@@ -44,26 +48,30 @@ public class UsuarioDAO {
     
     public void inserir(Usuario usuario){
     
-        String sql = "INSERT INTO usuarios(username, senha, perfil, email, curso, cep, telefone, bairro, unidade_federal, data_nascimento, pai, mae, cpf)"
-                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO usuarios(username, curso, perfil, senha, email, cep, Bairro, Unidade_federal, Pai, Mae, cpf, telefone, data_nascimento, Rg, data_inicio, data_termino, qualificacao, razao)"
+                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         
        try{
            PreparedStatement stmt = connection.prepareStatement(sql);
            stmt.setString(1, usuario.getUsername());
-           stmt.setString(2, usuario.getSenha());
+           stmt.setString(2, usuario.getCurso());
            stmt.setString(3, usuario.getPerfil());
-           stmt.setString(4, usuario.getEmail());
-           stmt.setString(5,usuario.getCurso());
+           stmt.setString(4, usuario.getSenha());
+           stmt.setString(5, usuario.getEmail());
            stmt.setString(6, usuario.getCep());
-           stmt.setString(7, usuario.getTelefone());
-           stmt.setString(8, usuario.getBairro());
-           stmt.setString(9, usuario.getUnidade_Federal());
-           stmt.setString(10, usuario.getData_nascimento());
-           stmt.setString(11, usuario.getPai());
-           stmt.setString(12, usuario.getMae());
-           stmt.setInt(13, usuario.getCpf());
-           
-          
+           stmt.setString(7,usuario.getBairro());
+           stmt.setString(8, usuario.getUnidade_Federal());
+           stmt.setString(9, usuario.getPai());
+           stmt.setString(10, usuario.getMae());
+           stmt.setString(11, usuario.getCpf());
+           stmt.setString(12, usuario.getTelefone());
+           stmt.setString(13, usuario.getData_nascimento());
+           stmt.setString(14, usuario.getRg());
+           stmt.setString(15, usuario.getData_inicio());
+           stmt.setString(16, usuario.getData_termino());
+           stmt.setString(17, usuario.getQualificacao());
+           stmt.setString(18, usuario.getRazao());
+   
            stmt.execute();
            stmt.close();
            
@@ -79,7 +87,7 @@ public class UsuarioDAO {
     public Usuario consultar(Usuario usuario){
         
         Usuario consulta = new Usuario();
-        String sql = "select id, username, senha, curso, perfil "
+        String sql = "select * "
                 + "from usuarios where id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -87,9 +95,30 @@ public class UsuarioDAO {
             ResultSet rs = stmt.executeQuery();
             if(rs.next()){
                 consulta.setUsername(rs.getString(2));
-                consulta.setSenha(rs.getString(3));
-                consulta.setCurso(rs.getString(4));
-                consulta.setPerfil(rs.getString(5));
+                consulta.setCurso(rs.getString(3));
+                consulta.setPerfil(rs.getString(4));
+                consulta.setSenha(rs.getString(5));
+                consulta.setEmail(rs.getString(6));
+                consulta.setCep(rs.getString(7));
+                consulta.setBairro(rs.getString(8));
+                consulta.setUnidade_Federal(rs.getString(9));
+                consulta.setPai(rs.getString(10));
+                consulta.setMae(rs.getString(11));
+                consulta.setCpf(rs.getString(12));
+                consulta.setTelefone(rs.getString(13));
+                consulta.setCnpj(rs.getString(14));
+                consulta.setData_nascimento(rs.getString(15));
+                consulta.setRg(rs.getString(16));
+                consulta.setData_inicio(rs.getString(17));
+                consulta.setData_termino(rs.getString(18));
+                consulta.setQualificacao(rs.getString(19));
+                consulta.setRazao(rs.getString(20));
+                
+                
+                
+                
+                
+                
                 
             
             }

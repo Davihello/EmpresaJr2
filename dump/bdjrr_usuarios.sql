@@ -28,8 +28,23 @@ CREATE TABLE `usuarios` (
   `curso` enum('Enfermagem','Informática','Administração') DEFAULT NULL,
   `perfil` enum('Orientador','Aluno','Empresa','Administrador') DEFAULT NULL,
   `senha` varchar(50) DEFAULT NULL,
+  `Email` varchar(50) DEFAULT NULL,
+  `cep` varchar(50) DEFAULT NULL,
+  `Bairro` varchar(50) DEFAULT NULL,
+  `Unidade_federal` varchar(50) DEFAULT NULL,
+  `Pai` varchar(50) DEFAULT NULL,
+  `Mae` varchar(50) DEFAULT NULL,
+  `cpf` varchar(15) DEFAULT NULL,
+  `telefone` varchar(15) DEFAULT NULL,
+  `cnpj` varchar(15) DEFAULT NULL,
+  `data_nascimento` varchar(15) DEFAULT NULL,
+  `Rg` varchar(25) DEFAULT NULL,
+  `data_inicio` varchar(20) DEFAULT NULL,
+  `data_termino` varchar(20) DEFAULT NULL,
+  `qualificacao` varchar(20) DEFAULT NULL,
+  `razao` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +53,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Carequinha',NULL,'Administrador','1234'),(15,'kin','Informática','Empresa','1234'),(16,'Davi','Enfermagem','Aluno','1234'),(17,'Careca','Informática','Orientador','1234'),(18,'Bunny','Administração','Aluno','1234'),(19,'Celin','Enfermagem','Empresa','1234'),(20,'Jhon','Administração','Orientador','1234'),(21,'Tiadami','Administração','Empresa','1234');
+INSERT INTO `usuarios` VALUES (1,'Administrador',NULL,'Administrador','1234',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(48,'Davi','Informática','Aluno','1234','davi@gmial.com','25215395','Campos Elisios','Rj','Carlos','Maria','100.102.847-12','26767194',NULL,'20/04/2004','100002',NULL,NULL,NULL,NULL),(49,'Marcelo','Enfermagem','Empresa','1234','Celin@gmail.com','5000','sao tomé','RJ',NULL,NULL,'102.120','214785',NULL,NULL,'6','2000','3000',NULL,'Nvidea'),(50,'Milena','Administração','Orientador','1234','mi@gmail.com','8000','Azevedo ','Sp',NULL,NULL,'1000','63500',NULL,'12/05/2000','9','10/00/0000','05/00/0555','Professora',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +66,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-15 17:47:18
+-- Dump completed on 2022-06-05 16:54:33

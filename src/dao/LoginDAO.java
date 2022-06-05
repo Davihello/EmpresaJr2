@@ -62,7 +62,7 @@ public class LoginDAO {
                         
                        String perfil = rs.getString("perfil");
        
-                        if("secreatrio".equals(perfil)){
+                        if("secretario".equals(perfil)){
                            JOptionPane.showMessageDialog(null,"Conectado com sucesso");
                            MenuPrincipal menu = new MenuPrincipal();
                            menu.setVisible(true);
