@@ -889,9 +889,9 @@ public class CadastroOrientador extends javax.swing.JFrame {
             + "',unidade_federal='" + this.txtUf.getText()
             + "',data_nascimento='" + this.txtNasci.getText()        
             + "',senha='" + this.txtSenha.getText()+ "',perfil='"       
-            + this.jComboBoxPerfil.getSelectedItem() + "',curso='"
-            + "',username='" + this.txtUsername.getText()        
-            + this.jComboBoxCurso.getSelectedItem()
+            + this.jComboBoxPerfil.getSelectedItem()  
+            + "',username='" + this.txtUsername.getText()      
+            + "',curso='"  + this.jComboBoxCurso.getSelectedItem()
             + "' WHERE id='" + this.txtId.getText() + "'");
             JOptionPane.showMessageDialog(rootPane, "Usuário atualizado com sucesso!");
             } catch (SQLException | ClassNotFoundException e) {
