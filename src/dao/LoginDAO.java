@@ -6,6 +6,7 @@ import gui.MenuSecretario;
 import gui.Login;
 import gui.MenuAlunos;
 import gui.MenuEmpresa;
+import gui.MenuOrientador;
 
 import gui.MenuPrincipal;
 
@@ -62,9 +63,9 @@ public class LoginDAO {
                         
                        String perfil = rs.getString("perfil");
        
-                        if("secretario".equals(perfil)){
+                        if("Orientador".equals(perfil)){
                            JOptionPane.showMessageDialog(null,"Conectado com sucesso");
-                           MenuPrincipal menu = new MenuPrincipal();
+                           MenuOrientador menu = new MenuOrientador();
                            menu.setVisible(true);
                            this.gui.dispose();
                         }

@@ -216,6 +216,12 @@ public class CadastroEmpresa extends javax.swing.JFrame {
         jLabel4.setText("Empresa Jovem Aprendiz");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons/empresa_1.png"))); // NOI18N
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         jPanel5.setBackground(new java.awt.Color(51, 51, 51));
         jPanel5.setPreferredSize(new java.awt.Dimension(249, 4));
@@ -1262,6 +1268,11 @@ public class CadastroEmpresa extends javax.swing.JFrame {
     private void txtDataTermFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDataTermFocusGained
         txtDataTerm.setText("");
     }//GEN-LAST:event_txtDataTermFocusGained
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+          MenuSecretario menu1 = new MenuSecretario();
+        menu1.show();
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     
     private void carregaTabela(){
